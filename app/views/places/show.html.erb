@@ -2,7 +2,10 @@
 
   <h1><%= @place["name"] %></h1>
 
-  <h2>My Posts</h2>
+  <p>
+    <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
+  </p>
+
   <% for post in @posts %>
     <div class= "col-md-6 col-lg-3">
       <h3><%= post["title"] %></h3>
@@ -15,10 +18,6 @@
       <p><%= post["description"] %></p>
     </div>
   <% end %>
-
-  <p>
-    <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
-  </p>
 
   <p>
     <a href="/places">Back to All Places</a>
